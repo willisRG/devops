@@ -1,7 +1,7 @@
 ---
 - name: Update webservers
   hosts: vb_vms
-  remote_users: root
+  remote_user: root
 
   tasks:
   - name: Ensure http is installed and updated
