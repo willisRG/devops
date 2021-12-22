@@ -17,9 +17,8 @@
         name: httpd
         enabled: yes
         state: started
-  - name: enable insecure web traffic
-    firewalld:
-        zone: public
-        port: 80/tcp
-        permanent: true
-        state: enabled
+  - name: Disable firewalld
+    ansible.builtin.service:
+        name: firewalld
+        enabled: no
+        state: stopped
