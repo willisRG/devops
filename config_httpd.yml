@@ -8,7 +8,12 @@
     ansible.builtin.yum:
         name: httpd
         state: latest
-  - name: Update the apache configuration file
+  - name: Update the web site file
     ansible.builtin.template:
-        src: /opt/git/devops/httpd.conf
-        dest: /etc/httpd.conf
+        src: /opt/git/devops/index.html
+        dest: /var/www/html/index.html
+  - name: Enable httpd service
+    ansible.builtin.service:
+        name: httpd
+        enabled: yes
+        state: started
