@@ -18,8 +18,8 @@
         enabled: yes
         state: started
   - name: enable insecure web traffic
-        firewalld:
-          zone: public
-          port: 80/tcp
-          permanent: true
-          state: enabled
+    firewalld:
+        zone: public
+        port: 80/tcp
+        permanent: true
+        state: enabled
